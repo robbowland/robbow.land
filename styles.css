@@ -1,0 +1,91 @@
+/* Root Variables for Theme Colors */
+:root {
+    --bg-color-light: white;
+    --text-color-light: black;
+    --bg-color-dark: black;
+    --text-color-dark: white;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Toggle Button */
+.toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* Keeps the toggle button size consistent */
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* Title */
+h1 {
+    font-size: 4rem; /* Larger font size for the title */
+    margin: 0;
+    text-align: center;
+}
+
+/* Icons Section */
+.icons {
+    display: flex;
+    gap: 20px; /* Adjust gap for better spacing with larger icons */
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.icons a {
+    text-decoration: none;
+    color: inherit; /* Matches text color */
+    font-size: 2.5rem; /* Larger font size for the icons */
+    transition: color 0.3s ease;
+}
+
+.icons a:hover {
+    color: gray;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem; /* Slightly smaller for medium screens */
+    }
+
+    .icons a {
+        font-size: 2rem; /* Adjust icon size */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem; /* Smaller for small screens */
+    }
+
+    .icons a {
+        font-size: 1.5rem; /* Adjust icon size for small screens */
+    }
+}
