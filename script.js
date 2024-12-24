@@ -1,14 +1,19 @@
-// Toggles dark mode and updates the icon between moon (light mode) and sun (dark mode)
+// Render Feather icons initially
+feather.replace();
+
 function toggleDarkMode() {
   const body = document.body;
-  const toggleIcon = document.getElementById("themeToggle").querySelector("i");
+  const toggleButton = document.getElementById("themeToggle");
 
+  // Toggle dark mode class
   body.classList.toggle("dark-mode");
 
-  // Update the icon based on the current mode
-  if (body.classList.contains("dark-mode")) {
-    toggleIcon.classList.replace("fa-moon", "fa-sun"); // Sun icon for dark mode
-  } else {
-    toggleIcon.classList.replace("fa-sun", "fa-moon"); // Moon icon for light mode
-  }
+  // Determine the new icon name based on the mode
+  const newIconName = body.classList.contains("dark-mode") ? "sun" : "moon";
+
+  // Update the innerHTML of the toggle button with a new <i> element
+  toggleButton.innerHTML = `<i data-feather="${newIconName}"></i>`;
+
+  // Re-render Feather icons to apply the new icon
+  feather.replace();
 }
