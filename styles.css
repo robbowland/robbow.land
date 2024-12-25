@@ -107,13 +107,18 @@ h1 {
     animation-delay: 0.5s;
 }
 
-/* Dot animation */
 @keyframes moveDot {
     0% {
-        transform: translateX(0);
+        transform: translate(0, 0); /* Initial position */
+    }
+    25% {
+        transform: translate(0, 0.3em); /* Move down */
+    }
+    75% {
+        transform: translate(2.1em, 0.3em); /* Slide under the text */
     }
     100% {
-        transform: translateX(2.1em); /* Moves the dot closer to 'robbow' */
+        transform: translate(2.1em, 0); /* Move back up to final position */
     }
 }
 
