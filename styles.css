@@ -97,14 +97,14 @@ h1 {
 .dot {
     display: inline-block;
     animation: moveDot 2.75s ease-in-out forwards;
-    animation-delay: 0.6s;
+    animation-delay: 1s;
     position: relative;
 }
 
 .land {
     display: inline-block;
     animation: slideLand 2.75s ease-in-out forwards;
-    animation-delay: 0.6s;
+    animation-delay: 1s;
 }
 
 @keyframes moveDot {
