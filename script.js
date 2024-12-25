@@ -1,22 +1,46 @@
 // Render Feather icons initially
 feather.replace();
 
+// Function to apply the theme based on saved preference
+function applySavedTheme() {
+  const body = document.body;
+  const toggleButton = document.getElementById("themeToggle");
+
+  // Check localStorage for the user's theme preference
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    toggleButton.innerHTML = `<i data-feather="sun"></i>`;
+  } else {
+    body.classList.remove("dark-mode");
+    toggleButton.innerHTML = `<i data-feather="moon"></i>`;
+  }
+
+  // Render Feather icons
+  feather.replace();
+}
+
+// Function to toggle theme and save preference
 function toggleDarkMode() {
   const body = document.body;
   const toggleButton = document.getElementById("themeToggle");
 
-  // Toggle dark mode class
-  body.classList.toggle("dark-mode");
+  // Toggle the dark-mode class
+  const isDarkMode = body.classList.toggle("dark-mode");
 
-  // Determine the new icon name based on the mode
-  const newIconName = body.classList.contains("dark-mode") ? "sun" : "moon";
+  // Update the toggle button icon
+  toggleButton.innerHTML = `<i data-feather="${isDarkMode ? "sun" : "moon"}"></i>`;
 
-  // Update the innerHTML of the toggle button with a new <i> element
-  toggleButton.innerHTML = `<i data-feather="${newIconName}"></i>`;
+  // Save the user's preference in localStorage
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 
-  // Re-render Feather icons to apply the new icon
+  // Re-render Feather icons
   feather.replace();
 }
+
+// Apply the saved theme when the page loads
+applySavedTheme();
 
 // Add animation to move the dot
 setTimeout(() => {
