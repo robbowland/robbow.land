@@ -4,6 +4,7 @@
     --text-color-light: black;
     --bg-color-dark: black;
     --text-color-dark: white;
+    --social-icon-translate-Y: -7px;
 }
 
 /* General Styles */
@@ -30,22 +31,26 @@ body.dark-mode {
 /* Toggle Button */
 .toggle-container {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
 }
 
 .toggle {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.5rem; /* Keeps the toggle button size consistent */
     color: inherit;
     transition: color 0.3s ease;
 }
 
+.theme-toggle {
+    size: 2.5rem;
+    stroke-width: "2";
+}
+
 /* Title */
 h1 {
-    font-size: 4rem; /* Larger font size for the title */
+    font-size: 4.3rem;
     margin: 0;
     text-align: center;
 }
@@ -53,40 +58,56 @@ h1 {
 /* Icons Section */
 .icons {
     display: flex;
-    gap: 20px; /* Adjust gap for better spacing with larger icons */
-    margin-top: 30px;
+    gap: 20px;
+    margin-top: 20px;
     justify-content: center;
 }
 
 .icons a {
     text-decoration: none;
     color: inherit; /* Matches text color */
-    font-size: 2.5rem; /* Larger font size for the icons */
-    transition: color 0.3s ease;
+    font-size: 2.6rem;
+    transition: transform 0.45s ease;
 }
 
 .icons a:hover {
-    color: gray;
+    transform: translateY(
+        var(--social-icon-translate-Y)
+    ); /* Moves the icon up slightly */
+}
+
+/* Default state (closed envelope) */
+.email-icon i::before {
+    content: "\f0e0"; /* Unicode for closed envelope (Font Awesome) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    display: inline-block;
+}
+
+/* Hover state (open envelope) */
+.email-icon:hover i::before {
+    content: "\f2b6"; /* Unicode for open envelope (Font Awesome) */
+    transform: translateY(var(--social-icon-translate-Y));
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 3rem; /* Slightly smaller for medium screens */
+        font-size: 3rem;
     }
 
     .icons a {
-        font-size: 2rem; /* Adjust icon size */
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 2rem; /* Smaller for small screens */
+        font-size: 2rem;
     }
 
     .icons a {
-        font-size: 1.5rem; /* Adjust icon size for small screens */
+        font-size: 1.5rem;
     }
 }
 
@@ -112,10 +133,10 @@ h1 {
         transform: translate(0, 0); /* Initial position */
     }
     25% {
-        transform: translate(0, 0.3em); /* Move down */
+        transform: translate(0, 0.35em); /* Move down */
     }
     75% {
-        transform: translate(2.11em, 0.3em); /* Slide under the text */
+        transform: translate(2.11em, 0.35em); /* Slide under the text */
     }
     100% {
         transform: translate(2.11em, 0); /* Move back up to final position */
