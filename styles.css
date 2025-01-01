@@ -4,13 +4,18 @@
     --text-color-light: black;
     --bg-color-dark: black;
     --text-color-dark: white;
+    --title-animation: 3s ease-in-out forwards;
+    --title-animantion-delay: 1s;
+    --title-animation-translate-land-X: -0.28em;
+    --title-animation-translate-dot-X: 2.32em;
+    --title-animation-translate-dot-Y: 0.35em;
     --social-icon-translate-Y: -7px;
 }
 
 /* General Styles */
 body {
     margin: 0;
-    font-family: Inter, sans-serif;
+    font-family: Poppins, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +55,7 @@ body.dark-mode {
 
 /* Title */
 h1 {
-    font-size: 4.3rem;
+    font-size: 7rem;
     margin: 0;
     text-align: center;
 }
@@ -58,15 +63,15 @@ h1 {
 /* Icons Section */
 .icons {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 2.5rem;
+    margin-top: 5px;
     justify-content: center;
 }
 
 .icons a {
     text-decoration: none;
     color: inherit; /* Matches text color */
-    font-size: 2.6rem;
+    font-size: 3.5rem;
     transition: transform 0.45s ease;
 }
 
@@ -91,23 +96,33 @@ h1 {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     h1 {
-        font-size: 3rem;
+        font-size: 6rem;
     }
 
     .icons a {
-        font-size: 2rem;
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    .icons a {
+        font-size: 2.25rem;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
 
     .icons a {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
 
@@ -117,15 +132,15 @@ h1 {
 
 .dot {
     display: inline-block;
-    animation: moveDot 2.75s ease-in-out forwards;
-    animation-delay: 1s;
+    animation: moveDot var(--title-animation);
+    animation-delay: var(--title-animantion-delay);
     position: relative;
 }
 
 .land {
     display: inline-block;
-    animation: slideLand 2.75s ease-in-out forwards;
-    animation-delay: 1s;
+    animation: slideLand var(--title-animation);
+    animation-delay: var(--title-animantion-delay);
 }
 
 @keyframes moveDot {
@@ -133,13 +148,22 @@ h1 {
         transform: translate(0, 0); /* Initial position */
     }
     25% {
-        transform: translate(0, 0.35em); /* Move down */
+        transform: translate(
+            0,
+            var(--title-animation-translate-dot-Y)
+        ); /* Move down */
     }
     75% {
-        transform: translate(2.11em, 0.35em); /* Slide under the text */
+        transform: translate(
+            var(--title-animation-translate-dot-X),
+            var(--title-animation-translate-dot-Y)
+        ); /* Slide under the text */
     }
     100% {
-        transform: translate(2.11em, 0); /* Move back up to final position */
+        transform: translate(
+            var(--title-animation-translate-dot-X),
+            0
+        ); /* Move back up to final position */
     }
 }
 
@@ -149,6 +173,6 @@ h1 {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-0.33em); /* Smoothly aligns 'land' */
+        transform: translateX(var(--title-animation-translate-land-X));
     }
 }
