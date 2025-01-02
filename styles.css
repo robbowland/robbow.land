@@ -190,3 +190,7 @@ h1 {
         transform: translateX(var(--title-animation-translate-land-X));
     }
 }
+
+footer {
+    visibility: hidden;
+}

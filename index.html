@@ -52,51 +52,61 @@
         </script>
     </head>
     <body class="dark-mode">
-        <div class="toggle-container">
-            <button
-                class="toggle"
-                id="themeToggle"
-                onclick="toggleDarkMode()"
-                aria-label="Theme Toggle"
-            >
-                <i data-feather="sun"></i>
-            </button>
-        </div>
-        <h1 id="title">
-            <span class="robbow">robbow</span><span class="dot">.</span
-            ><span class="land">land</span>
-        </h1>
-        <div class="icons">
-            <a
-                href="https://linkedin.com/in/robbowland"
-                target="_blank"
-                aria-label="LinkedIn"
-            >
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a
-                href="https://github.com/robbowland"
-                target="_blank"
-                aria-label="GitHub"
-            >
-                <i class="fab fa-github"></i>
-            </a>
-            <a
-                href="mailto:hello@robbow.land"
-                target="_blank"
-                aria-label="Email"
-                class="email-icon"
-            >
-                <i class="fa-regular fa-envelope"></i>
-            </a>
-            <a
-                href="https://instagram.com/robbowland"
-                target="_blank"
-                aria-label="Instagram"
-            >
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
+        <header role="banner">
+            <h1 id="title">
+                <span class="robbow">robbow</span><span class="dot">.</span
+                ><span class="land">land</span>
+            </h1>
+        </header>
+
+        <main role="main">
+            <nav role="navigation" class="icons" aria-label="Social Links">
+                <a
+                    href="https://linkedin.com/in/robbowland"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                >
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                    href="https://github.com/robbowland"
+                    target="_blank"
+                    aria-label="GitHub"
+                >
+                    <i class="fab fa-github"></i>
+                </a>
+                <a
+                    href="mailto:hello@robbow.land"
+                    target="_blank"
+                    aria-label="Email"
+                    class="email-icon"
+                >
+                    <i class="fa-regular fa-envelope"></i>
+                </a>
+                <a
+                    href="https://instagram.com/robbowland"
+                    target="_blank"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </nav>
+
+            <section class="toggle-container" aria-label="Theme Controls">
+                <button
+                    class="toggle"
+                    id="themeToggle"
+                    onclick="toggleDarkMode()"
+                    aria-label="Dark Mode Toggle"
+                >
+                    <i data-feather="sun"></i>
+                </button>
+            </section>
+        </main>
+
+        <footer role="contentinfo">
+            <p>&copy; 2024 Rob Bowland</p>
+        </footer>
         <script src="script.js"></script>
     </body>
 </html>
