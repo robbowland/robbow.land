@@ -48,11 +48,6 @@ body.dark-mode {
     transition: color 0.3s ease;
 }
 
-.theme-toggle {
-    size: 2.5rem;
-    stroke-width: "2";
-}
-
 /* Title */
 h1 {
     font-size: 7rem;
@@ -118,7 +113,7 @@ h1 {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 3.25rem;
     }
 
     .icons a {
