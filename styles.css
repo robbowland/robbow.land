@@ -1,4 +1,4 @@
-/* Root Variables for Theme Colors */
+/* == Root Variables == */
 :root {
     --bg-color-light: white;
     --text-color-light: black;
@@ -12,7 +12,7 @@
     --social-icon-translate-Y: -7px;
 }
 
-/* General Styles */
+/* == General Styles == */
 body {
     margin: 0;
     font-family: Poppins, sans-serif;
@@ -33,11 +33,11 @@ body.dark-mode {
     color: var(--text-color-dark);
 }
 
-/* Toggle Button */
+/* == Dark Mode Toggle == */
 .toggle-container {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 8px;
 }
 
 .toggle {
@@ -48,21 +48,21 @@ body.dark-mode {
     transition: color 0.3s ease;
 }
 
-/* Class added to created data-feather svgs */
+/* Class added to created data-feather svgs (used for toggle) */
 .feather {
     height: 2.5em;
     width: 2.5em;
     stroke-width: 2.5;
 }
 
-/* Title */
+/* == Title Section == */
 h1 {
     font-size: 7rem;
     margin: 0;
     text-align: center;
 }
 
-/* Icons Section */
+/* == Icons Section == */
 .icons {
     display: flex;
     gap: 2.5rem;
@@ -83,6 +83,7 @@ h1 {
     ); /* Moves the icon up slightly */
 }
 
+/* == Email Icon States == */
 /* Default state (closed envelope) */
 .email-icon i::before {
     content: "\f0e0"; /* Unicode for closed envelope (Font Awesome) */
@@ -97,64 +98,17 @@ h1 {
     transform: translateY(var(--social-icon-translate-Y));
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 6rem;
-    }
-
-    .icons a {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 4.5rem;
-    }
-
-    .icons a {
-        font-size: 2.25rem;
-    }
-
-    .feather {
-        height: 2.25em;
-        width: 2.25em;
-        stroke-width: 2.15;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 3.25rem;
-    }
-
-    .icons a {
-        font-size: 1.75rem;
-    }
-
-    .feather {
-        height: 2em;
-        width: 2em;
-        stroke-width: 2;
-    }
-}
-
+/* == Animation: robbow.land == */
 .robbow {
     display: inline-block;
 }
 
+/* '.' Animation */
 .dot {
     display: inline-block;
     animation: moveDot var(--title-animation);
     animation-delay: var(--title-animantion-delay);
     position: relative;
-}
-
-.land {
-    display: inline-block;
-    animation: slideLand var(--title-animation);
-    animation-delay: var(--title-animantion-delay);
 }
 
 @keyframes moveDot {
@@ -181,16 +135,70 @@ h1 {
     }
 }
 
-/* Land animation */
+/* 'land' Animation */
+.land {
+    display: inline-block;
+    animation: slideLand var(--title-animation);
+    animation-delay: var(--title-animantion-delay);
+}
+
 @keyframes slideLand {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(var(--title-animation-translate-land-X));
+    } /* Slide left to fill gap left by '.' */
+}
+
+/* == Footer Section == */
+footer {
+    visibility: hidden;
+}
+
+/* == Responsive Design == */
+
+/* Tablet and Desktop */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    .icons a {
+        font-size: 3rem;
     }
 }
 
-footer {
-    visibility: hidden;
+/* Small Tablet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    .icons a {
+        font-size: 2.25rem;
+    }
+
+    .feather {
+        height: 2.25em;
+        width: 2.25em;
+        stroke-width: 2.15;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3.25rem;
+    }
+
+    .icons a {
+        font-size: 1.75rem;
+    }
+
+    .feather {
+        height: 2em;
+        width: 2em;
+        stroke-width: 2;
+    }
 }
