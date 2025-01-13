@@ -13,6 +13,10 @@
 }
 
 /* == General Styles == */
+a {
+    cursor: pointer;
+}
+
 body {
     margin: 0;
     font-family: Poppins, sans-serif;
@@ -45,7 +49,13 @@ body.dark-mode {
     border: none;
     cursor: pointer;
     color: inherit;
-    transition: color 0.3s ease;
+    transition:
+        transform 0.45s ease,
+        color 0.3s ease;
+}
+
+.toggle:hover {
+    transform: translateY(-7px);
 }
 
 /* Class added to created data-feather svgs (used for toggle) */
@@ -65,6 +75,11 @@ body.dark-mode {
 #logo {
     width: 3.5em;
     height: auto;
+    transition: transform 0.45s ease;
+}
+
+#logo:hover {
+    transform: translateY(-7px);
 }
 
 /* == Title Section == */
