@@ -6,8 +6,8 @@
     --text-color-dark: white;
     --title-animation: 3s ease-in-out forwards;
     --title-animantion-delay: 1s;
-    --title-animation-translate-land-X: -0.28em;
-    --title-animation-translate-dot-X: 2.32em;
+    --title-animation-translate-land-X: -0.2825em;
+    --title-animation-translate-dot-X: 2.326em;
     --title-animation-translate-dot-Y: 0.35em;
     --social-icon-translate-Y: -7px;
 }
@@ -53,6 +53,18 @@ body.dark-mode {
     height: 2.5em;
     width: 2.5em;
     stroke-width: 2.5;
+}
+
+/* == Logo == */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 12em;
+    height: auto;
 }
 
 /* == Title Section == */
